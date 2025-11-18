@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic -Wl,--dependency-file=CMakeFiles/tftp_client.dir/link.d CMakeFiles/tftp_client.dir/src/main.cpp.o CMakeFiles/tftp_client.dir/src/tftp_client.cpp.o -o tftp_client
