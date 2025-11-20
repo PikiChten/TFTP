@@ -73,20 +73,22 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 - 支持基本错误状态返回（文件不存在、无权限、非法操作等）
 - 提供命令行交互菜单
 ## 三、项目结构
-- LICENSE
-- README.md
-- tftp_client/
-  - CMakeLists.txt
-  - header/
-    - tftp_client.h
-  - src/
-    - main.cpp
-    - tftp_client.cpp
-- tftp_server/
-  - CMakeLists.txt
-  - header/
-    - tftp_server.h
-  - src/
-    - main.cpp
-    - tftp_server.cpp
-
+```
+.
+├── LICENSE
+├── README.md
+├── tftp_client
+│   ├── CMakeLists.txt
+│   ├── header
+│   │   └── tftp_client.h
+│   └── src
+│       ├── main.cpp
+│       └── tftp_client.cpp
+└── tftp_server
+    ├── CMakeLists.txt
+    ├── header
+    │   └── tftp_server.h
+    └── src
+        ├── main.cpp
+        └── tftp_server.cpp
+```
