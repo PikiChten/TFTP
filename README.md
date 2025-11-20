@@ -104,7 +104,7 @@ cmake ..
 make
 
 ### 编译客户端
-cd ../../tftp_client
+cd tftp_client
 mkdir build
 cd build
 cmake ..
