@@ -25,21 +25,21 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 - 结束传输：当传输的文件大小小于512字节时，DATA报文的数据部分小于512字节，表示传输结
 束。对于WRQ请求，客户端发送一个小于512字节的DATA报文表示传输结束。
 ### 1.3 报文格式
-RRQ / WRQ 报文格式：
-2 bytes | string | 1 byte | string | 1 byte
-Opcode | Filename | 0 | Mode | 0
+| 读写请求 | 操作码1/2 (R/W) | 文件名    | 通信模式“netascii”或“octet” | 0 |
+|---|---|---|---|---|
+|         | 2 Byte         | nB string | 1B         | nB string | 1B |
 
-DATA 报文格式：
-2 bytes | 2 bytes | n bytes
-Opcode | Block# | Data
+| 数据包   | 操作码3        | 块编号    | 数据                      |
+|---|---|---|---|
+|         | 2 Byte         | 2 Byte    | 0到512B，实际传输的数据。    |
 
-ACK 报文格式：
-2 bytes | 2 bytes
-Opcode | Block#
+| ACK     | 操作码4 (ACK) | 块编号    |
+|---|---|---|
+|         | 2 Byte         | 2 Byte    |
 
-ERROR 报文格式：
-2 bytes | 2 bytes | string | 1 byte
-Opcode | Error# | Errmsg | 0
+| ERROR   | 操作码5        | 错误码    | 错误信息      | 0 |
+|---|---|---|---|---|
+|         | 2Byte          | 2Byte     | nB string    | 1B |
 ## 二、功能特性
 - 支持 TFTP RRQ（读请求）操作
 - 支持 TFTP WRQ（写请求）操作
@@ -67,3 +67,4 @@ Opcode | Error# | Errmsg | 0
     └── src
         ├── main.cpp
         └── tftp_server.cpp
+
