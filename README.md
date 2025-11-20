@@ -24,6 +24,22 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 的有序传输和确认。
 - 结束传输：当传输的文件大小小于512字节时，DATA报文的数据部分小于512字节，表示传输结
 束。对于WRQ请求，客户端发送一个小于512字节的DATA报文表示传输结束。
+### 1.3 报文格式
+RRQ / WRQ 报文格式：
+2 bytes | string | 1 byte | string | 1 byte
+Opcode | Filename | 0 | Mode | 0
+
+DATA 报文格式：
+2 bytes | 2 bytes | n bytes
+Opcode | Block# | Data
+
+ACK 报文格式：
+2 bytes | 2 bytes
+Opcode | Block#
+
+ERROR 报文格式：
+2 bytes | 2 bytes | string | 1 byte
+Opcode | Error# | Errmsg | 0
 ## 二、功能特性
 - 支持 TFTP RRQ（读请求）操作
 - 支持 TFTP WRQ（写请求）操作
@@ -33,4 +49,21 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 - 支持文件二进制模式（octet）
 - 支持基本错误状态返回（文件不存在、无权限、非法操作等）
 - 提供命令行交互菜单
-
+## 三、项目结构
+├── LICENSE
+├── README.md
+├── tftp_client
+│   ├── CMakeLists.txt
+│   ├── header
+│   │   └── tftp_client.h
+│   └── src
+│       ├── main.cpp
+│       └── tftp_client.cpp
+└── tftp_server
+    |
+    ├── CMakeLists.txt
+    ├── header
+    │   └── tftp_server.h
+    └── src
+        ├── main.cpp
+        └── tftp_server.cpp
