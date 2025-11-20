@@ -83,7 +83,6 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 │       ├── main.cpp
 │       └── tftp_client.cpp
 └── tftp_server
-    |
     ├── CMakeLists.txt
     ├── header
     │   └── tftp_server.h
