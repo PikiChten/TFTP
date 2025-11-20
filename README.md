@@ -1,4 +1,4 @@
-# 基于UDP的TFTP文件传输项目
+<img width="711" height="859" alt="image" src="https://github.com/user-attachments/assets/a9324dcf-b1b8-4a3d-9ec8-192ff9549dc4" /># 基于UDP的TFTP文件传输项目
 ## 一、TFTP传输模型的简介
 基于UDP通信的TFTP（Trivial File Transfer Protocol，简单文件传输协议）模型是一种用于在网络上进
 行文件传输的简单协议。TFTP设计简单，易于实现，通常用于传输小文件或在不支持复杂协议的环境中
@@ -73,6 +73,7 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 - 支持基本错误状态返回（文件不存在、无权限、非法操作等）
 - 提供命令行交互菜单
 ## 三、项目结构
+.
 ├── LICENSE
 ├── README.md
 ├── tftp_client
