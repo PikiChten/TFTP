@@ -94,7 +94,12 @@ TFTP协议设计简单，仅支持五种类型的报文，分别是：
 ## 四、安装与使用
 git clone https://github.com/PikiChten/TFTP.git
 cd TFTP
-cd tftp_server和cd tftp_client
+### 编译服务端
+cd tftp_server
+mkdir build && cd build
+cmake .. && make
+### 编译客户端
+cd ../../tftp_client
 mkdir build && cd build
 cmake .. && make
 ### 客户端
